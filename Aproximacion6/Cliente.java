@@ -1,3 +1,10 @@
+
+/**
+ * Write a description of class Cliente here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
 public class Cliente {
     protected final String id;
     private String nombre;
