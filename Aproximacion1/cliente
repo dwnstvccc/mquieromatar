@@ -1,0 +1,22 @@
+public class Cliente {
+    String nombre;
+    String id;
+    String tiempo;
+    double librosuno;
+    double librosdos;
+    double librostres;
+    
+    Cliente(String id, String nombre, String tiempo , double librosuno, double librosdos, double librostres){
+        this.id = id;
+        this.nombre = nombre;
+        this.tiempo = tiempo;
+        this.librosuno = librosuno;
+        this.librosdos = librosdos;
+        this.librostres = librostres;
+    }
+    
+    double calcularPromedio(){
+        return (librosuno+ librosdos + librostres) / 3;
+    }
+
+}
