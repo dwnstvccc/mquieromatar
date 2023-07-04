@@ -1,0 +1,46 @@
+import java.util.Scanner;
+public class Libros {
+  public static void main(String[] args){
+        Scanner scanner = new Scanner(System.in);
+        int numClientes = 0, opcionMenu = 0;
+        Cliente[] losClientes = new Cliente[30];
+        String nombre, id, tiempo;
+        double librosuno, librosdos, librostres;
+        double promedio = 0;
+        
+        while(opcionMenu != 3){
+            System.out.println("\nMenu de Opciones: ");
+            System.out.println("1. Adicionar un Cliente: ");
+            System.out.println("2. Calcular promedio de prestamo de libros: ");
+            System.out.println("3. Salir ");
+            System.out.println("Escoja una opcion.... ");
+            opcionMenu = scanner.nextInt();
+            
+            if(opcionMenu== 1){
+                System.out.println("Ingrese el nombre del cliente: ");
+                nombre = scanner.next();
+                System.out.println("Ingrese la identificacion del cliente:  ");
+                id = scanner.next();
+                System.out.println("Ingrese el tiempo de prestamo de libros hechos al cliente: ");
+                tiempo = scanner.next();
+                System.out.println("Ingrese la primera cantidad de libros prestados al cliente: ");
+                librosuno = scanner.nextDouble();
+                System.out.println("Ingrese la segunda cantidad de libros prestados al cliente: ");
+                librosdos = scanner.nextDouble();
+                System.out.println("Ingrese la tercera cantidad de libros prestados al cliente: ");
+                librostres = scanner.nextDouble();
+                Cliente unCliente = new Cliente(id, nombre, tiempo, librosuno, librosdos, librostres);
+                losClientes[numClientes] = unCliente;
+                numClientes++;
+            }
+            
+            else if(opcionMenu==2){
+                for(int i = 0; i < numClientes; i++){
+                    promedio = promedio + losClientes[i].calcularPromedio() / numClientes ;       
+                }
+                System.out.println("\n El Promedio de libros prestados en la biblioteca es: "+ promedio);
+            }
+        }
+    
+    }
+}
